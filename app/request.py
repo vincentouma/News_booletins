@@ -22,7 +22,7 @@ def configure_request(app):
     article_url = app.config['BASE_URL']
 
 def get_sources(category):
-        """
+    """
     Function that gets the json response to our url request
     """
     get_sources_url = base_url.format(category, api_key)
@@ -41,7 +41,7 @@ def get_sources(category):
     return sources_results
 
 def process_results(sources_list):
-        """
+    """
     Function that processes the sources result and tranforms them to a list of objects
     """
 
@@ -60,7 +60,7 @@ def process_results(sources_list):
     return sources_results
 
 def get_article(id):
-        get_article_url = article_url.format(id, api_key)
+    get_article_url = article_url.format(id, api_key)
 
     with urllib.request.urlopen(get_article_url) as url:
         article_results = json.loads(url.read())
@@ -72,7 +72,7 @@ def get_article(id):
     return article_object
 
 def process_article(article_list):
-        article_object = []
+    article_object = []
     for article_item in article_list:
         id = article_item.get('id')
         author = article_item.get('author')
