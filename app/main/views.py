@@ -16,3 +16,13 @@ def index():
     title = 'News by Nick'
     return render_template('index.html', title=title, sports=sport_news, technology=tech_news, entertainment=entertainment_news)
 
+
+@main.route('/source/<id>')
+def articles(id):
+    """
+    View articles
+    """
+    article = get_article(id)
+    print(article)
+    title = f'Nick News{id}'
+    return render_template('news.html', title=title, article=article)
