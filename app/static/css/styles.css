@@ -1,0 +1,21 @@
+body{
+    text-align: center
+}
+
+h1{
+    text-align: center;
+    color:white;
+    background-color:lightseagreen;
+    font-family: 'Viga', sans-serif;
+}
+
+ul{
+    font-family: 'Maven Pro', sans-serif;
+
+}
+
+a{
+    font-family: 'Caveat', cursive;
+
+
+}
