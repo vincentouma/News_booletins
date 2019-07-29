@@ -1,35 +1,43 @@
 {% extends 'base.html' %}
 
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Caveat|Maven+Pro|Viga&display=swap" rel="stylesheet">
+
+{% endblock %}
 
 {% block content%}
 
 
 {% for article_row in article %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-<link href="https://fonts.googleapis.com/css?family=Caveat|Maven+Pro|Viga&display=swap" rel="stylesheet">
-
-
 
 
 <div class="container">
-   
-        
-            <a href="{{article_row.url}}">
-                <img src="{{article_row.image}}" alt="{{article_row.title}}" class="img-responsive"
-                    styles="height:30px">
-            </a>
-            <div class="caption">
-                <h4><a href="{{article_row.url}}" target="_blank">{{article_row.title |truncate(35)}}</a></h4>
-                <p>{{article.description | truncate(80)}}</p>
-                <a href="{{article_row.url}}" target="_blank"> Read More</a>
-            </div>
-            <div class="footer">
-                Published at: {{article_row.date}}
-            </div>
 
-       
-   
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="thumbnail">
+
+                <a href="{{article_row.url}}">
+                    <img src="{{article_row.image}}" alt="{{article_row.title}}" class="img-responsive"
+                        styles="height:30px">
+                </a>
+                <div class="caption">
+                    <h4><a href="{{article_row.url}}" target="_blank">{{article_row.title |truncate(40)}}</a></h4>
+                    <p>{{article.description | truncate(90)}}</p>
+                    <a href="{{article_row.url}}" target="_blank"> Read More</a>
+                </div>
+                <div class="footer">
+                    Published at: {{article_row.date}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
 
 </div>
 
